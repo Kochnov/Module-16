@@ -75,9 +75,7 @@ class Block:
 
     # @TODO
     # Rename the `data` attribute to `record`, and set the data type to `Record`
-    #data: Any
     record: Record
-    
     creator_id: int
     prev_hash: str = "0"
     timestamp: str = datetime.datetime.utcnow().strftime("%H:%M:%S")
@@ -174,7 +172,7 @@ pychain = setup()
 
 # @TODO:
 # Delete the `input_data` variable from the Streamlit interface.
-#input_data = st.text_input("Block Data")
+
 
 # @TODO:
 # Add an input area where you can get a value for `sender` from the user.
@@ -197,7 +195,6 @@ if st.button("Add Block"):
     # which is set equal to a `Record` that contains the `sender`, `receiver`,
     # and `amount` values
     new_block = Block(
-        #data=input_data,
         record=Record(sender, receiver, amount),
         creator_id=42,
         prev_hash=prev_block_hash
